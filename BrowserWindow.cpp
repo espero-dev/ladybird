@@ -42,7 +42,7 @@ BrowserWindow::BrowserWindow(Browser::CookieJar& cookie_jar, StringView webdrive
     auto* settings_action = new QAction("&Settings", this);
     settings_action->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Comma));
     menu->addAction(settings_action);
-
+    
     auto* close_current_tab_action = new QAction("Close Current Tab", this);
     close_current_tab_action->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_W));
     menu->addAction(close_current_tab_action);
@@ -220,9 +220,11 @@ BrowserWindow::BrowserWindow(Browser::CookieJar& cookie_jar, StringView webdrive
     disable_spoofing->setChecked(true);
     add_user_agent("Chrome Linux Desktop", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36");
     add_user_agent("Firefox Linux Desktop", "Mozilla/5.0 (X11; Linux i686; rv:87.0) Gecko/20100101 Firefox/87.0");
+    add_user_agent("Firefox MicroWave Desktop", "Mozilla/5.0 (MicroWave; Desktop; Transformer) Gecko/68.0 Firefox/86.0");
     add_user_agent("Safari macOS Desktop", "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15");
     add_user_agent("Chrome Android Mobile", "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.66 Mobile Safari/537.36");
     add_user_agent("Firefox Android Mobile", "Mozilla/5.0 (Android 11; Mobile; rv:68.0) Gecko/68.0 Firefox/86.0");
+    add_user_agent("Firefox MicroWave Mobile", "Mozilla/5.0 (MicroWave; Mobile; Transformer) Gecko/68.0 Firefox/86.0");
     add_user_agent("Safari iOS Mobile", "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1");
 
     auto* custom_user_agent_action = new QAction("Custom...");
